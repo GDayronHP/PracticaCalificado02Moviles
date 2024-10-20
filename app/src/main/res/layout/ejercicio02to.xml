@@ -1,0 +1,143 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pedido"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Sección Nombre Cliente -->
+    <ImageView
+        android:id="@+id/icon_name"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_nombre"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"/>
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre Cliente"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="@id/icon_name"
+        app:layout_constraintStart_toEndOf="@id/icon_name"
+        android:layout_marginStart="8dp"/>
+
+    <!-- Sección Número Cliente -->
+    <ImageView
+        android:id="@+id/icon_number"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_numero"
+        app:layout_constraintTop_toBottomOf="@id/icon_name"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"/>
+
+    <TextView
+        android:id="@+id/tvPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Número Cliente"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="@id/icon_number"
+        app:layout_constraintStart_toEndOf="@id/icon_number"
+        android:layout_marginStart="8dp"/>
+
+    <!-- Sección Productos -->
+    <ImageView
+        android:id="@+id/icon_products"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_producto"
+        app:layout_constraintTop_toBottomOf="@id/icon_number"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"/>
+
+    <TextView
+        android:id="@+id/tvProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Productos"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="@id/icon_products"
+        app:layout_constraintStart_toEndOf="@id/icon_products"
+        android:layout_marginStart="8dp"/>
+
+    <!-- Sección Ubicación -->
+    <ImageView
+        android:id="@+id/icon_location"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_ubicacion"
+        app:layout_constraintTop_toBottomOf="@id/icon_products"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"/>
+
+    <TextView
+        android:id="@+id/tvLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ubicación"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="@id/icon_location"
+        app:layout_constraintStart_toEndOf="@id/icon_location"
+        android:layout_marginStart="8dp"/>
+
+    <!-- Botones -->
+    <LinearLayout
+        android:layout_marginBottom="16dp"
+        android:weightSum="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <ImageButton
+            android:id="@+id/imbLlamar"
+            android:src="@drawable/ic_llamar"
+            android:background="@null"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:scaleType="fitCenter"
+            android:layout_height="match_parent" />
+        <ImageButton
+            android:id="@+id/imbWsp"
+            android:src="@drawable/ic_whatsapp"
+            android:background="@null"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:scaleType="centerInside"
+            android:layout_height="match_parent" />
+        <ImageButton
+            android:id="@+id/imbMaps"
+            android:src="@drawable/ic_maps"
+            android:background="@null"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:scaleType="centerInside"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
