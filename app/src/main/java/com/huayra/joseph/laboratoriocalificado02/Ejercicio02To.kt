@@ -12,11 +12,10 @@ import com.huayra.joseph.laboratoriocalificado02.databinding.Ejercicio02toBindin
 class Ejercicio02To : AppCompatActivity() {
 
     private lateinit var binding: Ejercicio02toBinding
-
     private val NAME_KEY = "NAME_KEY"
-    private val NUMBER_KEY = "NUMBER_KEY" // Cambié este nombre para que coincida con Ejercicio02
-    private val CITY_KEY = "CITY_KEY" // Cambié este nombre para que coincida con Ejercicio02
-    private val PRODUCTS_KEY = "PRODUCTS_KEY" // Cambié este nombre para que coincida con Ejercicio02
+    private val NUMBER_KEY = "NUMBER_KEY"
+    private val CITY_KEY = "CITY_KEY"
+    private val PRODUCTS_KEY = "PRODUCTS_KEY"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,7 +45,6 @@ class Ejercicio02To : AppCompatActivity() {
             binding.tvLocation.text = "Ubicación: $location"
             binding.tvProduct.text = "Productos: $products"
         } ?: run {
-            // Puedes mostrar un mensaje de error aquí si no hay datos
         }
     }
 
@@ -58,10 +56,15 @@ class Ejercicio02To : AppCompatActivity() {
 
     private fun goWsp(bundle: Bundle?) {
         val phone = bundle?.getString(NUMBER_KEY)
-        val message = "Hola, te he agregado a mi lista de contactos"
+        val name = bundle?.getString(NAME_KEY, "Nombre no disponible")
+        val products = bundle?.getString(PRODUCTS_KEY, "Productos no disponibles")
+        val location = bundle?.getString(CITY_KEY, "Ubicación no disponible")
+
+        val message = "Hola $name, Tus productos: $products están en camino a la dirección: $location"
 
         if (phone != null) {
-            Intent(Intent.ACTION_VIEW, Uri.parse("https://wa.me/+51$phone?text=$message")).also {
+            val encodedMessage = Uri.encode(message)
+            Intent(Intent.ACTION_VIEW, Uri.parse("https://wa.me/+51$phone?text=$encodedMessage")).also {
                 startActivity(it)
             }
         } else {
